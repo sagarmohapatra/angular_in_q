@@ -7,18 +7,20 @@ import { NgForm } from '@angular/forms';
 })
 export class TableComponent {
   @ViewChild('myFrom') myForm: NgForm | undefined;
+  
   store: any[] = [];
   toggle: any = false;
   constructor() {
     console.log('check', this.store);
   }
-
+  namesearch:any="";
   // view child acess the table without parameter pass
   onSubmit() {
     console.log(this.myForm?.value);
     this.toggle = true;
     this.store.push({ ...this.myForm?.value });
 
+    // other method store single data
     this.formData.name = this.myForm?.value.name;
     this.formData.password = this.myForm?.value.password;
     this.myForm?.reset();
@@ -32,4 +34,8 @@ export class TableComponent {
     name: '',
     password: '',
   };
+  delete(index: any) {
+    this.store.splice(index, 1);
+  }
+
 }

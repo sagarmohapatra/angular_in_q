@@ -10,6 +10,8 @@ import { ErrorpageComponent } from './errorpage/errorpage.component';
 import { FormsModule} from '@angular/forms';
 import { ChildComponent } from './child/child.component';
 import { TableComponent } from './table/table.component';
+// import { FilterpipePipe } from './filterpipe.pipe';
+import { FilterPipe } from './pipe/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { TableComponent } from './table/table.component';
     ParentToChildComponent,
     ErrorpageComponent,
     ChildComponent,
-    TableComponent
+    TableComponent,
+    // FilterpipePipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
